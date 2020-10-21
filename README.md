@@ -1,18 +1,18 @@
 # survey-spa-flask-vue
-A survey platform built on Flask and Vue.js. This survey app deals with basic questions such as *DataConsent*, *Demographics*, *Ideologies* and *QualityControl* and text highlighting question where the participants can annotate words/phrases wthat show certain properties. 
+A web-based survey application built using Flask and Vue.js. The survey app allows combining classic survey functionality, such as posing single-choice, multiple choice and slider questions, with text annotation functionality, i.e., allowing participants to select words or phrases in a provided text for annotation. 
 
-## To import the project locally
+## To run the application locally
 
-1) Make sure you have all the dependencies resolved in requirements.txt.
-2) The current version of the app runs on a WSGI server hosted on pythonanywhere.com. To run the project on a locally, please create a local flask server.
-3) Next, please add this line `app.run(0.0.0.0)` at the end of the file `flask_app.py`.
-4) Configure a local MySQL server or a SQLLite server and make the appropriate changes in `surveyapi.models.db` to get the DB up and running.
+1) Resolve all dependencies in requirements.txt.
+2) Set up a local flask server.
+3) Add this line `app.run(0.0.0.0)` at the end of the file `flask_app.py`.
+4) Configure a local MySQL or SQLite server and make the appropriate changes in `surveyapi.models.db` to get the database up and running.
 
-## Platform structure and hierarchies
+## Application structure and hierarchies
 
-- Models for simple survey response mechanisms such as simple single select choice, multiple select, chips select, range sliders and text highlighter already exist in `surveyapi.models`
-- To create new response model, please do the appropriate DB migrations as per the flask and your DB configurations.
-- The following main models (and corresponding tables) exist in the survey and can be used out of the box:
+- Models for basic survey questions, such as single-choice and multiple-choice qiestions, chips select, range sliders, and text highlights already exist in `surveyapi.models`
+- To create new models, please perform the appropriate DB migrations as per the configuration of your flask and database servers.
+- The following models (and corresponding tables) exist in the survey and can be used out of the box:
 > 1. **SurveyRecord**: Holds the parent object generated from the responses such as such as *DataConsent*, *Demographics*, *Ideologies* and *QualityControl* from a participant.
 > 2. **SurveyGroups**: Groups the sentences that are to be annotated. Also holds the max quota variable of the groups.
 > 3. **Survey**: Encapsulator for various types of surveys such as demographics, ideologies etc.
@@ -99,7 +99,7 @@ In the file seeder.py, use the function `seed_annotation_sentences()` to do so.
 seed_annotation_sentences()
 ```
 
-The function expects a CSV file such as the following `https://github.com/kanishk2509/survey-spa-flask-vue/blob/master/sentences_grouped_reshuffled.csv`
+The function expects a CSV file such as the following https://github.com/Media-Bias-Analysis-Group/SAQ_text_annotation_and_question_survey_tool/blob/master/sentences_grouped_reshuffled.csv
 
 ## Seeding survey questions
 
