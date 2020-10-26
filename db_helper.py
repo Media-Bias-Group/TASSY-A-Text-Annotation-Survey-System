@@ -11,10 +11,10 @@ from pprint import pprint
 from collections import OrderedDict
 
 SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
-    username="unisurveyapp",
-    password="ZBMTzdzCMmb4@vv",
-    hostname="unisurveyapp.mysql.pythonanywhere-services.com",
-    databasename="unisurveyapp$production_00"
+    username="user",
+    password="pass@vv",
+    hostname="host",
+    databasename="db"
 )
 
 MAX_QUOTA = 10
