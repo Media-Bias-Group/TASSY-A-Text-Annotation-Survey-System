@@ -1,5 +1,5 @@
-# survey-spa-flask-vue
-A web-based survey application built using Flask and Vue.js. The survey app allows combining classic survey functionality, such as posing single-choice, multiple choice and slider questions, with text annotation functionality, i.e., allowing participants to select words or phrases in a provided text for annotation. 
+# TASSY— A Text Annotation Survey System 
+TASSY is a web-based survey application built using Flask and Vue.js. The survey app allows combining classic survey functionality, such as posing single-choice, multiple choice and slider questions, with text annotation functionality, i.e., allowing participants to select words or phrases in a provided text for annotation. 
 
 ## To run the application locally
 
