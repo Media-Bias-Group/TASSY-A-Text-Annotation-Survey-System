@@ -1,5 +1,5 @@
 # TASSY— A Text Annotation Survey System 
-TASSY is a web-based survey application built using Flask and Vue.js. The survey app allows combining classic survey functionality, such as posing single-choice, multiple choice and slider questions, with text annotation functionality, i.e., allowing participants to select words or phrases in a provided text for annotation. 
+TASSY is a web-based survey application built using Flask and Vue.js. The app allows combining classic survey functionality, such as posing single-choice, multiple-choice, and slider questions, with text annotation functionality, i.e., allowing participants to select and annotate words or phrases in a provided text. 
 
 ## To run the application locally
 
@@ -10,17 +10,17 @@ TASSY is a web-based survey application built using Flask and Vue.js. The survey
 
 ## Application structure and hierarchies
 
-- Models for basic survey questions, such as single-choice and multiple-choice qiestions, chips select, range sliders, and text highlights already exist in `surveyapi.models`
+- Models for basic survey questions, such as single-choice and multiple-choice questions, chips select, range sliders, and text highlights already exist in `surveyapi.models`
 - To create new models, please perform the appropriate DB migrations as per the configuration of your flask and database servers.
-- The following models (and corresponding tables) exist in the survey and can be used out of the box:
-> 1. **SurveyRecord**: Holds the parent object generated from the responses such as such as *DataConsent*, *Demographics*, *Ideologies* and *QualityControl* from a participant.
-> 2. **SurveyGroups**: Groups the sentences that are to be annotated. Also holds the max quota variable of the groups.
-> 3. **Survey**: Encapsulator for various types of surveys such as demographics, ideologies etc.
-> 4. **Question**: Holds a survey question. Can be specified with the type of response the question should hold.
-> 3. **AnnotationSentences**: Actual sentences that are to be annotated. Holds other propeties such as pulication, urls etc.
+- The following models (and corresponding tables) exist in the survey and can be used out-of-the-box:
+> 1. **SurveyRecord**: Holds the parent object generated from a perticipant’s responses, such as *DataConsent*, *Demographics*, *Ideologies* and *QualityControl*.
+> 2. **SurveyGroups**: Groups the sentences that are to be annotated. It also holds the max quota variable of the groups.
+> 3. **Survey**: Container for various types of surveys, such as demographics, ideologies etc.
+> 4. **Question**: Holds a survey question. It can be specified with the type of response the question should hold.
+> 3. **AnnotationSentences**: Actual sentences that are to be annotated. Also holds other properties, such as publication, URLs, etc.
 > 4. **Annotations**: Holds the words/phrases highlighted/annotated by the participants.
 
-File seeder.py is used to seed and populate the platform database with questions etc.
+File seeder.py serves to seed and populate the platform database with questions etc.
 
 ## Creating a simple demographic question with single choice select
 
@@ -45,7 +45,7 @@ db.session.commit()
 ```
 
 
-## Creating a simple ideological question with range slider select
+## Creating a simple ideological question with a range slider input
 
 Run the file seeder.py with these lines of code.
 
@@ -53,7 +53,7 @@ Run the file seeder.py with these lines of code.
 survey = Survey(name="idealogy_questions")
 idealogy_questions = []
 question_1 = Question(
-    text='Do you consider yourself to be liberal, conservative or somewhere in between?',
+    text='Do you consider yourself to be liberal, conservative, or somewhere in between?',
     type='range_slider',
     name='political_ideology'
 )
@@ -66,14 +66,14 @@ question_1.range_slider_choices = [
     )
 ]
 idealogy_questions.append(question_1)
-survey.questions = idealogy_questions
+survey.questions = ideology_questions
 db.session.add(survey)
 db.session.commit()
 ```
 
 ## Seeding annotation sentences
 
-In the file seeder.py, use the function `seed_annotation_sentences()` to do so.
+In the file seeder.py, use the function `seed_annotation_sentences()`.
 
 ```python
     app = create_app()
@@ -113,7 +113,7 @@ In the file seeder.py, use the functions
 
 ## Extracting the survey output
 
-The output is extracted in the CSV format. Use the below command to open the interactive python shell.
+The output is extracted in CSV format. Use the command below to open the interactive python shell.
 
 `python -i db_helper.py`
 
@@ -126,6 +126,6 @@ Get all the survey worker records as CSV
 Get all the survey annotations as CSV
 `to_csv_all_annotations(db, ctx, after_date=optional)`
 
-## In action
+## Demo System
 
 https://unisurveyapp.pythonanywhere.com/
