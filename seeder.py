@@ -65,13 +65,13 @@ def seed_personal_questions():
     db.session.commit()
 
 
-def seed_idealogy_questions():
-    # survey_old = Survey.query.filter_by(name='idealogy_questions').first()
+def seed_ideology_questions():
+    # survey_old = Survey.query.filter_by(name='ideology_questions').first()
     # db.session.delete(survey_old)
     # db.session.commit()
 
-    survey = Survey(name="idealogy_questions")
-    idealogy_questions = []
+    survey = Survey(name="ideology_questions")
+    ideology_questions = []
 
     # 1
     question_1 = Question(
@@ -87,7 +87,7 @@ def seed_idealogy_questions():
             label_right_side='Very conservative'
         )
     ]
-    idealogy_questions.append(question_1)
+    ideology_questions.append(question_1)
 
     # 2
     question_2 = Question(
@@ -103,7 +103,7 @@ def seed_idealogy_questions():
         SimpleChoice(text='Every day'),
         SimpleChoice(text='Several times per day')
     ]
-    idealogy_questions.append(question_2)
+    ideology_questions.append(question_2)
 
 
     # 3
@@ -132,9 +132,9 @@ def seed_idealogy_questions():
         SimpleChoice(text='Time magazine'),
         SimpleChoice(text='Business Insider')
     ]
-    idealogy_questions.append(question_3)
+    ideology_questions.append(question_3)
 
-    survey.questions = idealogy_questions
+    survey.questions = ideology_questions
     db.session.add(survey)
     db.session.commit()
 
@@ -269,7 +269,7 @@ def seed_test_annotation_sentences():
 
 if __name__ == '__main__':
     # seed_personal_questions()
-    # seed_idealogy_questions()
+    # seed_ideology_questions()
     # seed_iqc_questions()
     # seed_annotation_questions()
     create_test_groups()

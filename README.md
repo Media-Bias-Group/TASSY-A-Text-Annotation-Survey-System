@@ -50,8 +50,8 @@ db.session.commit()
 Run the file seeder.py with these lines of code.
 
 ```python
-survey = Survey(name="idealogy_questions")
-idealogy_questions = []
+survey = Survey(name="ideology_questions")
+ideology_questions = []
 question_1 = Question(
     text='Do you consider yourself to be liberal, conservative, or somewhere in between?',
     type='range_slider',
@@ -65,7 +65,7 @@ question_1.range_slider_choices = [
         label_right_side='Very conservative'
     )
 ]
-idealogy_questions.append(question_1)
+ideology_questions.append(question_1)
 survey.questions = ideology_questions
 db.session.add(survey)
 db.session.commit()
@@ -106,7 +106,7 @@ The function expects a CSV file such as the following https://github.com/Media-B
 In the file seeder.py, use the functions 
 
 1. `seed_personal_questions()`
-2. `seed_idealogy_questions()`
+2. `seed_ideology_questions()`
 3. `seed_annotation_questions()`
 4. `create_groups()`
 
