@@ -1,5 +1,10 @@
 # TASSY— A Text Annotation Survey System 
+
 TASSY is a web-based survey application built using Flask and Vue.js. The app allows combining classic survey functionality, such as posing single-choice, multiple-choice, and slider questions, with text annotation functionality, i.e., allowing participants to select and annotate words or phrases in a provided text. 
+
+## Demo
+
+https://unisurveyapp.pythonanywhere.com/
 
 ## To run the application locally
 
@@ -125,7 +130,3 @@ Get all the survey worker records as CSV
 
 Get all the survey annotations as CSV
 `to_csv_all_annotations(db, ctx, after_date=optional)`
-
-## Demo System
-
-https://unisurveyapp.pythonanywhere.com/
