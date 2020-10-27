@@ -6,7 +6,7 @@ TASSY is a web-based survey application built using Flask and Vue.js. The app al
 
 http://tassy.blind-review.org
 
-*Note*: In some browsers, disabling third-party cookies prevents the applications from runnig. Please enable cookies if you experience problems.
+**Note**: In some browsers, disabling third-party cookies prevents the applications from runnig. Please enable cookies if you experience problems.
 
 ## To run the application locally
 
