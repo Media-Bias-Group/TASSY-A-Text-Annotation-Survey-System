@@ -130,3 +130,8 @@ Get all the survey worker records as CSV
 
 Get all the survey annotations as CSV
 `to_csv_all_annotations(db, ctx, after_date=optional)`
+
+
+------
+
+Feel free to come forward with any questions or extend/improve the tool. Just contact us.
