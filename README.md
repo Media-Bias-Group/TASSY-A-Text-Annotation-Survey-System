@@ -4,7 +4,7 @@ TASSY is a web-based survey application built using Flask and Vue.js. The app al
 
 ## Demo
 
-https://unisurveyapp.pythonanywhere.com/
+http://tassy.blind-review.org
 
 ## To run the application locally
 
